@@ -25,4 +25,6 @@ def getConfig():
         return None
     config['api_key'] = api_key
     config['model'] = os.getenv('OPENAI_MODEL') if os.getenv('OPENAI_MODEL') is not None else "gpt-4.1-nano"
+    config['temperature'] = float(os.getenv('OPENAI_TEMPERATURE')) if os.getenv('OPENAI_TEMPERATURE') is not None else 0.7
+    config['HF_TOKEN'] = os.getenv('HF_TOKEN')
     return config

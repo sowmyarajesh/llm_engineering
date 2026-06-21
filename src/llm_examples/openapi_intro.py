@@ -14,3 +14,9 @@ if __name__ == "__main__":
     response = openai.chat.completions.create(model="gpt-4.1-mini", messages=[user_message])
     print(response.choices[0].message.content)
 
+    easy_puzzle = [
+        {"role": "user", "content": 
+            "You toss 2 coins. One of them is heads. What's the probability the other is tails? Answer with the probability only."},
+    ]
+    response = openai.chat.completions.create(model="gpt-5-nano", messages=easy_puzzle, reasoning_effort="minimal")
+    print(response.choices[0].message.content)
